@@ -31,4 +31,15 @@ class UsersController < ApplicationController
     end    
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    if @user.update_attribute(:available,false)
+      flash[:notice] = 'User deleted.'
+      redirect_to :action => :index
+    else
+      flash[:error] = 'Couldn\'t delete the user. Please check the errors.'
+      redirect_to :back
+    end
+  end
+
 end
