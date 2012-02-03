@@ -1,6 +1,5 @@
 TrainingCrud::Application.routes.draw do
   resources :users
-  match "/users" => "users#search", :as => "search_user", :via => "get"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
