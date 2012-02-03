@@ -3,14 +3,11 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all,:conditions => ['name LIKE ?', "%#{search}%"])
+      find(:all,:conditions => ['name LIKE ? and available = ?', "%#{search}%",true])
     else
-      find(:all)
+      find(:all,:conditions => ['available = ?',true])
     end
   end
-
-
-
 
 
   private

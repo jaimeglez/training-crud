@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.where(:available =>true)
+    @users = User.search(params[:search])
   end
 
   def create
@@ -40,11 +40,6 @@ class UsersController < ApplicationController
       flash[:error] = 'Couldn\'t delete the user. Please check the errors.'
       redirect_to :back
     end
-  end
-
-  def search
-    debugger
-    @users = User.search(params[:search])
   end
 
   def show
