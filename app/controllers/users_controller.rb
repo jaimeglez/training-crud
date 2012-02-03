@@ -42,4 +42,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    debugger
+    @users = User.search(params[:search])
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+
 end
