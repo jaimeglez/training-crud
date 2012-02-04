@@ -1,0 +1,21 @@
+    movies GET    /movies(.:format)          movies#index
+           POST   /movies(.:format)          movies#create
+ new_movie GET    /movies/new(.:format)      movies#new
+edit_movie GET    /movies/:id/edit(.:format) movies#edit
+     movie GET    /movies/:id(.:format)      movies#show
+           PUT    /movies/:id(.:format)      movies#update
+           DELETE /movies/:id(.:format)      movies#destroy
+    rentas GET    /rentas(.:format)          rentas#index
+           POST   /rentas(.:format)          rentas#create
+ new_renta GET    /rentas/new(.:format)      rentas#new
+edit_renta GET    /rentas/:id/edit(.:format) rentas#edit
+     renta GET    /rentas/:id(.:format)      rentas#show
+           PUT    /rentas/:id(.:format)      rentas#update
+           DELETE /rentas/:id(.:format)      rentas#destroy
+     users GET    /users(.:format)           users#index
+           POST   /users(.:format)           users#create
+  new_user GET    /users/new(.:format)       users#new
+ edit_user GET    /users/:id/edit(.:format)  users#edit
+      user GET    /users/:id(.:format)       users#show
+           PUT    /users/:id(.:format)       users#update
+           DELETE /users/:id(.:format)       users#destroy
