@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Movie title:
+  = @renta.movie.title
+%p
+  %b User:
+  = @renta.user.name
+
+= link_to 'Edit', edit_renta_path(@renta)
+\|
+= link_to 'Back', rentas_path

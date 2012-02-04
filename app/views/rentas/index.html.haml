@@ -1,0 +1,21 @@
+%h1 Listing rentas
+
+%table
+  %tr
+    %th User
+    %th Movie
+    %th
+    %th
+    %th
+
+  - @rentas.each do |renta|
+    %tr
+      %td= "#{renta.user.name} #{renta.user.last_name}"
+      %td= renta.movie.title
+      %td= link_to 'Show', renta_path(renta)
+      %td= link_to 'Edit', edit_renta_path(renta)
+      %td= link_to 'Destroy', renta_path(renta), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New renta', new_renta_path
