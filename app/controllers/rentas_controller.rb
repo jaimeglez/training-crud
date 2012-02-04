@@ -25,11 +25,6 @@ class RentasController < ApplicationController
   # GET /rentas/new.json
   def new
     @renta = Renta.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @renta }
-    end
   end
 
   # GET /rentas/1/edit
@@ -44,7 +39,7 @@ class RentasController < ApplicationController
 
     respond_to do |format|
       if @renta.save
-        format.html { redirect_to @renta, notice: 'Renta was successfully created.' }
+        format.html { redirect_to :action => 'index', notice: 'Renta was successfully created.' }
         format.json { render json: @renta, status: :created, location: @renta }
       else
         format.html { render action: "new" }
