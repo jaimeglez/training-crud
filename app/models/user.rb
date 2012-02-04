@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   before_create :record_available
+  has_and_belongs_to_many :movies_users
 
   def self.search(search)
     if search
